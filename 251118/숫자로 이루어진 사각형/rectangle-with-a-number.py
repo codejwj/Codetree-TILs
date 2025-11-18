@@ -2,8 +2,8 @@ N = int(input())
 
 def print_rect(n):
     cnt = 1
-    for i in range(n):
-        for j in range(n):
+    for _ in range(n):
+        for _ in range(n):
             print(cnt, end = " ")
             cnt += 1
             if cnt == 10:
