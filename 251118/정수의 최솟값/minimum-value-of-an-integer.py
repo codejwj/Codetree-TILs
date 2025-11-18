@@ -1,6 +1,6 @@
-a, b, c = map(int, input().split())
+a, b, c = tuple(map(int, input().split()))
 
-def min_num(x, y, z):
+def get_min(x, y, z):
     return min(x, y, z)
 
-print(min_num(a, b, c))
+print(get_min(a, b, c))
