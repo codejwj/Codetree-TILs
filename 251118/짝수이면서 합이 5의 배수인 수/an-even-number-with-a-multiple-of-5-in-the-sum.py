@@ -1,7 +1,9 @@
 n = int(input())
 
 def is_magic_number(x):
-    return x % 2 == 0 and (x % 10) // 10 % 5 == 0
+    sum_val = 0
+    sum_val += (x % 10) // 10
+    return x % 2 == 0 and sum_val % 5 == 0
 
 if is_magic_number(n):
     print("Yes")
