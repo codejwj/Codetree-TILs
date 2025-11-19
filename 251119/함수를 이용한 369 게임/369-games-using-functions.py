@@ -1,13 +1,19 @@
 A, B = map(int, input().split())
 
-def diff1(x):
-    return x % 10 == 3 or x % 10 == 6 or x % 10 == 9
-
-def diff2(x):
-    return x // 10 == 3 or x // 10 == 6 or x // 10 == 9
-
+def find_369(x):
+    for n in str(x):
+        if n in ['3', '6', '9']:
+            return True
+    return False
+    
 def is_magic_number(x):
-    return x % 3 == 0 or diff1(x) or diff2(x)
+    if x % 3 == 0:
+        return True
+    
+    if find_369(x):
+        return True
+    
+    return False
 
 cnt = 0
 for i in range(A, B + 1):
