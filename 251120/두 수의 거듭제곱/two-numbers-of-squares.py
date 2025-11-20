@@ -1,7 +1,6 @@
 a, b = tuple(map(int, input().split()))
 
-def exp(x, y):
-    x **= y
-    return x
+def power(x, y):
+    return x ** y
 
-print(exp(a, b))
+print(power(a, b))
