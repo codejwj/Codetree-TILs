@@ -1,21 +1,20 @@
 M, D = tuple(map(int, input().split()))
 
-def day(x, y):
+def last_day_number(x):
     if x == 2:
-        return 1 <= y <= 28
-    elif x <= 7:
-        if x % 2 == 0:
-            return 1 <= y <= 30
-        else:
-            return 1 <= y <= 31
-    elif x <= 12:
-        if x % 2 == 0:
-            return 1 <= y <= 31
-        else:
-            return 1 <= y <= 30
+        return 28
+    elif x == 4 or x == 6 or x == 9 or x == 11:
+        return 30
+    else:
+        return 31
+
+def judge_day(x, y):
+    if x <= 12 and y <= last_day_number(x):
+        return True
+    
     return False
 
-if day(M, D):
+if judge_day(M, D):
     print("Yes")
 else:
     print("No")
