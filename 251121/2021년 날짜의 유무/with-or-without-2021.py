@@ -8,11 +8,12 @@ def day(x, y):
             return 1 <= y <= 30
         else:
             return 1 <= y <= 31
-    else:
+    elif x <= 12:
         if x % 2 == 0:
             return 1 <= y <= 31
         else:
             return 1 <= y <= 30
+    return False
 
 if day(M, D):
     print("Yes")
