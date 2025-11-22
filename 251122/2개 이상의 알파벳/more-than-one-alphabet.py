@@ -1,16 +1,13 @@
 A = input()
 
-def two(x):
-    cnt = 0
-    for i in range(len(A)):
-        if x[i] != x[len(A) - i - 1]:
-            cnt += 1
-            if cnt >= 2:
-                return True
+def is_more_twoalp(x):
+    for i in range(len(x)):
+        if x[i] != x[0]:
+            return True
 
     return False
 
-if two(A):
+if is_more_twoalp(A):
     print("Yes")
 else:
     print("No")
