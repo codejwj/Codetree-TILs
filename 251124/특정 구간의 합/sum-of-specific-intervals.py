@@ -5,9 +5,8 @@ a = [tuple(map(int, input().split())) for _ in range(M)]
 arr = []
 
 def f():
-    global result
-    result = []
-    
+    global A, a
+
     for i in range(M):
         a1 = a[i][0] - 1
         a2 = a[i][1] - 1
