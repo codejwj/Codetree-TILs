@@ -1,10 +1,10 @@
 N, M = map(int, input().split())
 A = list(map(int, input().split()))
 
-sum_val = 0
-def f():
+
+def get_answer():
     global M 
-    global sum_val 
+    sum_val = 0
     while M >= 1:
         sum_val += A[M - 1]
         
@@ -12,6 +12,7 @@ def f():
             M -= 1
         else:
             M //= 2
+    
+    return sum_val
 
-f()
-print(sum_val)
+print(get_answer())
