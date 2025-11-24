@@ -1,7 +1,6 @@
 N, M = map(int, input().split())
 A = list(map(int, input().split()))
 
-
 def get_answer():
     global M 
     sum_val = 0
