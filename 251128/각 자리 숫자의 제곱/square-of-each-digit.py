@@ -4,6 +4,7 @@ def f(n):
     if n < 10:
         return n * n
     
-    return f(n // 10) + (n % 10) * (n % 10)
+    digit = n % 10
+    return f(n // 10) + digit ** 2
 
 print(f(N))
