@@ -1,9 +1,9 @@
 N = int(input())
 
-def fact(n):
-    if n == 1:
-        return 1
+def get_sum(n):
+    if n == 0:
+        return 0
 
-    return fact(n - 1) + n
+    return get_sum(n - 1) + n
 
-print(fact(N))
+print(get_sum(N))
