@@ -1,10 +1,11 @@
-N = int(input())
+n = int(input())
 arr = list(map(int, input().split()))
 
-def f(n):
-    if n == 0:
+#a번째까지 인덱스의 숫자 중에 가장 큰 값을 반환
+def max_value(a):
+    if a == 0:
         return arr[0]
     
-    return max(f(n - 1), arr[n - 1])
+    return max(max_value(a - 1), arr[a])
 
-print(f(N))
+print(max_value(n - 1))
