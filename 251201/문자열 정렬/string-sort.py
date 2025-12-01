@@ -1,6 +1,6 @@
-str = input()
+s = input()
 
-str_arr = sorted(str)
-sorted_str = ''.join(str_arr)
+s_arr = sorted(s)
+sorted_s = ''.join(s_arr)
 
-print(sorted_str)
+print(sorted_s)
