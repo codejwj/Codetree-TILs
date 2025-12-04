@@ -1,12 +1,13 @@
 N = int(input())
 nums = list(map(int, input().split()))
 
+#nums 정렬
 nums.sort()
-sum_val = 0
-result = []
 
-for i in range(2 * N):
+max_val = 0
+for i in range(N):
     sum_val = nums[i] + nums[-(i + 1)]
-    result.append(sum_val)
+    if sum_val > max_val:
+        max_val = sum_val
 
-print(max(result))
+print(max_val)
