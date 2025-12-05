@@ -1,13 +1,15 @@
 N, K, T = input().split()
 N, K = int(N), int(K)
-str = [input() for _ in range(N)]
+word = [input() for _ in range(N)]
 
-str.sort()
+T_len = len(T)
+new_word = []
 
-cnt = 0
-for i in range(N):
-    if T in str[i]:
-        cnt += 1
-        if cnt == K:
-            print(str[cnt])
-            break
+word.sort()
+for elem in word:
+    if elem[0 : T_len] == T:
+        new_word.append(elem)
+
+for i in range(len(new_word)):
+    if i == K - 1:
+        print(new_word[i])
