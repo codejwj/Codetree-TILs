@@ -1,18 +1,19 @@
-MAX_N = 5
+#클래스 선언
+class Agent:
+    def __init__(self, codename, score):
+        self.codename = codename
+        self.score = score
 
-codenames = []
-scores = []
-for _ in range(MAX_N):
-    codename, score = input().split()
-    codenames.append(codename)
-    scores.append(int(score))
+agents = []
 
-min_idx = codenames[0]
-min_val = scores[0]
+for _ in range(5):
+    codename, score = tuple(input().split())
+    agents.append(Agent(codename, int(score)))
 
-for i in range(MAX_N):
-    if scores[i] < min_val:
-        min_idx = codenames[i]
-        min_val = scores[i]
+#최소 점수를 갖는 유저를 찾기
+min_idx = 0
+for i in range(1, 5):
+    if agents[min_idx].score > agents[i].score:
+        min_idx = i
 
-print(min_idx, min_val)
+print(agents[min_idx].codename, agents[min_idx].score)
