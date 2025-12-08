@@ -1,4 +1,4 @@
-class Clear:
+class Bomb:
     def __init__(self, unlock_code, wire_color, seconds):
         self.unlock_code = unlock_code
         self.wire_color = wire_color
@@ -7,8 +7,8 @@ class Clear:
 unlock_code, wire_color, seconds = tuple(input().split())
 seconds = int(seconds)
 
-c = Clear(unlock_code, wire_color, seconds)
+b = Bomb(unlock_code, wire_color, seconds)
 
-print(f"code : {c.unlock_code}")
-print(f"color : {c.wire_color}")
-print(f"second : {c.seconds}")
+print(f"code : {b.unlock_code}")
+print(f"color : {b.wire_color}")
+print(f"second : {b.seconds}")
