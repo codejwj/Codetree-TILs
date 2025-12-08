@@ -1,13 +1,13 @@
 class Product:
-    def __init__(self, product_name = "codetree", product_code = 50):
-        self.product_name = product_name
-        self.product_code = product_code
+    def __init__(self, name = "codetree", code = 50):
+        self.name = name
+        self.code = code
 
 p1 = Product()
-print(f"product {p1.product_code} is {p1.product_name}")
+print(f"product {p1.code} is {p1.name}")
 
-product_name, product_code = input().split()
-product_code = int(product_code)
+name, code = input().split()
+code = int(code)
 
-p2 = Product(product_name, product_code)
-print(f"product {p2.product_code} is {p2.product_name}")
+p2 = Product(name, code)
+print(f"product {p2.code} is {p2.name}")
