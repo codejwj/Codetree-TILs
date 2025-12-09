@@ -4,11 +4,9 @@ class Student:
 
 n = int(input())
 students = []
-for i in range(n):
-    data = input().split()
-    h = data[0]
-    w = data[1]
-    students.append(Student(int(h), int(w), i + 1))
+for i in range(1, n + 1):
+    h, w = tuple(map(int, input().split()))
+    students.append(Student(h, w, i))
 
 students.sort(key = lambda x: (-x.h, -x.w, x.num))
 
