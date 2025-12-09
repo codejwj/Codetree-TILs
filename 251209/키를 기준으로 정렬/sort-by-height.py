@@ -6,9 +6,9 @@ class Person:
 
 n = int(input())
 arr = [tuple(input().split()) for _ in range(n)]
-p = [Person(name, int(height), int(weight)) for name, height, weight in arr]
+people = [Person(name, int(height), int(weight)) for name, height, weight in arr]
 
-p.sort(key = lambda x: x.height)
+people.sort(key = lambda x: x.height)
 
-for person in p:
+for person in people:
     print(person.name, person.height, person.weight)
