@@ -1,4 +1,4 @@
-A, B, C, D = map(int, input().split())
+A, B, C, D = tuple(map(int, input().split()))
 elapsed_time = 0
 
 while True:
