@@ -1,21 +1,20 @@
 class Sequence:
-    def __init__(self, elem, num):
-        self.elem, self.num = elem, num
+    def __init__(self, elem, idx):
+        self.elem, self.idx = elem, idx
 
 n = int(input())
-elem = list(map(int, input().split()))
+arr = list(map(int, input().split()))
 
 sequences = []
-for i in range(len(elem)):
-    sequences.append(Sequence(elem[i], i))
+sequences = [Sequence(elem, i) for i, elem in enumerate(arr)]
+result = [0 for _ in range(n)]
 
-sequences.sort(key = lambda x: (x.elem, x.num))
+#Custom Comparator를 활용한 정렬
+sequences.sort(key = lambda x: (x.elem, x.idx))
 
-result = [0] * n
-for new_idx in range(n):
-    sequence = sequences[new_idx]
-    old_idx = sequence.num
-    result[old_idx] = new_idx
+#정렬된 숫자들의 원래 인덱스를 활용한 결과 배열 저장
+for i, elem in enumerate(sequences):
+    result[elem.idx] = i + 1 #인덱스 보정
 
-for idx in result:
-    print(idx + 1, end = " ")
+for i in range(n):
+    print(result[i], end = " ")
