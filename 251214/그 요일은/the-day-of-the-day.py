@@ -13,11 +13,12 @@ N = day_2 - day_1 + 1
 
 day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
-start_idx = (day_1 - 1) % 7
+start_idx = (day_1 - 1 + 4) % 7
 target_idx = day.index(A)
 
 cnt = N // 7
 r = N % 7
+
 if r > 0:
     for i in range(r):
         if (start_idx + i) % 7 == target_idx:
