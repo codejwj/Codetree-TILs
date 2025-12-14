@@ -9,11 +9,11 @@ for i in range(12):
 
 day_1 = sum_days[m1 - 1] + d1
 day_2 = sum_days[m2 - 1] + d2
-N = day_2 - day_1 + 1
+N = day_2 - day_1
 
 day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
-start_idx = (day_1 - 1 + 4) % 7
+start_idx = (day_1 - 1) % 7
 target_idx = day.index(A)
 
 cnt = N // 7
@@ -21,7 +21,7 @@ r = N % 7
 
 if r > 0:
     for i in range(r):
-        if (start_idx + i) % 7 == target_idx:
+        if (start_idx + 1 + i) % 7 == target_idx:
             cnt += 1
             break
 
