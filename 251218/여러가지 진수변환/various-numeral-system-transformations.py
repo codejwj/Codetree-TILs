@@ -1,27 +1,13 @@
-N, B = map(int, input().split())
-digits1 = []
-digits2 = []
+N, B = tuple(map(int, input().split()))
+digits = []
 
-if B == 4:
-    while True:
-        if N < 4:
-            digits1.append(N)
-            break
-        
-        digits1.append(N % 4)
-        N //= 4
+while True:
+    if N < B:
+        digits.append(N)
+        break
     
-    for digit in digits1[::-1]:
-        print(digit, end = "")
+    digits.append(N % B)
+    N //= B
 
-if B == 8:
-    while True:
-        if N < 8:
-            digits2.append(N)
-            break
-        
-        digits2.append(N % 8)
-        N //= 8
-
-    for digit in digits2[::-1]:
-        print(digit, end = "")
+for digit in digits[::-1]:
+    print(digit, end = "")
