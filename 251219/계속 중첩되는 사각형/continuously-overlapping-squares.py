@@ -22,7 +22,7 @@ for i, (x1, y1, x2, y2) in enumerate(rects, start = 1):
 area = 0
 for x in range(0, MAX_R + 1):
     for y in range(0, MAX_R + 1):
-        if checked[x][y] == 2:
+        if checked[x][y] > 0 and checked[x][y] % 2 == 0:
             area += 1
 
 print(area)
