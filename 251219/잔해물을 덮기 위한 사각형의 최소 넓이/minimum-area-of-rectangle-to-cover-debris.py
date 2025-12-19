@@ -32,7 +32,7 @@ for x in range(0, MAX_R + 1):
             exist = True
 
 if not exist:
-    print(0)
+    area = 0
 else:
     area = (max_x - min_x + 1) * (max_y - min_y + 1)
 
