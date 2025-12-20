@@ -1,5 +1,5 @@
-CUR = 10000
-MAX_R = 20000
+CUR = 100000
+MAX_R = 200000
 
 N = int(input())
 checked = [0] * (MAX_R + 1)
