@@ -1,11 +1,11 @@
 CUR = 1000
+MAX_R = 2000
 
 N = int(input())
-checked = [0] * 2001
+checked = [0] * (MAX_R + 1)
 
-cnt = 0
 for _ in range(N):
-    X, LR = input().split()
+    X, LR = tuple(input().split())
     X = int(X)
     if LR == "L":
         for i in range(CUR - X, CUR):
@@ -16,9 +16,9 @@ for _ in range(N):
             checked[i] += 1
         CUR += X
 
-ans = 0
-for val in checked:
-    if val >= 2:
-        ans += 1
+cnt = 0
+for elem in checked:
+    if elem >= 2:
+        cnt += 1
 
-print(ans)
+print(cnt)
