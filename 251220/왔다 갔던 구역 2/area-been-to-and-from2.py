@@ -7,11 +7,11 @@ checked = [0] * (MAX_R + 1)
 for _ in range(N):
     X, LR = tuple(input().split())
     X = int(X)
-    if LR == "L":
+    if LR == 'L':
         for i in range(CUR - X, CUR):
             checked[i] += 1
         CUR -= X
-    elif LR == "R":
+    elif LR == 'R':
         for i in range(CUR, CUR + X):
             checked[i] += 1
         CUR += X
