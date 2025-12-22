@@ -8,10 +8,8 @@ for i in range(n):
     if i == 0 or arr[i] == arr[i - 1]:
         cnt += 1
     else:
-        if max_cnt < cnt:
-            max_cnt = cnt
         cnt = 1
 
-max_cnt = max(max_cnt, cnt)
+    max_cnt = max(max_cnt, cnt)
 
 print(max_cnt)
