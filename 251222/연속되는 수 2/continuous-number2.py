@@ -12,4 +12,6 @@ for i in range(n):
             max_cnt = cnt
         cnt = 1
 
+max_cnt = max(max_cnt, cnt)
+
 print(max_cnt)
