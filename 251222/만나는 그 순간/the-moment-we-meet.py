@@ -1,5 +1,5 @@
-CUR = 100000
-MAX_T = 1000000
+CUR = 1000000
+MAX_T = 2000000
 
 N, M = tuple(map(int, input().split()))
 
