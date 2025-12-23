@@ -1,4 +1,4 @@
-MAX_T = 1000000
+MAX_T = 999999
 
 N, M = tuple(map(int, input().split()))
 
