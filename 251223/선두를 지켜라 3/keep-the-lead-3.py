@@ -14,16 +14,20 @@ for _ in range(M):
         pos_B.append(pos_B[-1] + v)
 
 leader, cnt = 0, 0
-for i in range(1, len(pos_A)):
+for i in range(0, len(pos_A)):
     if pos_A[i] > pos_B[i]:
-        if leader == 2:
-            cnt += 1
-        leader = 1
+        cur_leader = 1
     elif pos_A[i] < pos_B[i]:
-        if leader == 1:
-            cnt += 1
-        leader = 2
-    else:
+        cur_leader = 2
+    elif pos_A[i] == pos_B[i]:
+        cur_leader = 3
+
+    if leader == 0:
+        leader = cur_leader
+        continue
+    
+    if leader != cur_leader:
         cnt += 1
+        leader = cur_leader
 
 print(cnt)
