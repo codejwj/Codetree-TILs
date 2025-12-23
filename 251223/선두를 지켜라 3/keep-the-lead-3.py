@@ -13,21 +13,26 @@ for _ in range(M):
     for _ in range(t):
         pos_B.append(pos_B[-1] + v)
 
+#A가 리더면 1, B가 리더면 2, 둘 다 리더면 3
 leader, cnt = 0, 0
-for i in range(0, len(pos_A)):
+for i in range(1, len(pos_A)):
     if pos_A[i] > pos_B[i]:
-        cur_leader = 1
+        #조합이 바뀌었다면 답을 갱신
+        if leader != 1:
+            cnt += 1
+        #리더 A
+        leader = 1
     elif pos_A[i] < pos_B[i]:
-        cur_leader = 2
-    elif pos_A[i] == pos_B[i]:
-        cur_leader = 3
-
-    if leader == 0:
-        leader = cur_leader
-        continue
-    
-    if leader != cur_leader:
-        cnt += 1
-        leader = cur_leader
-
+        #조합이 바뀌었다면 답을 갱신
+        if leader != 2:
+            cnt += 1
+        #리더 B
+        leader = 2
+    else:
+        #조합이 바뀌었다면 답을 갱신
+        if leader != 3:
+            cnt += 1
+        #둘 다 리더
+        leader = 3
+        
 print(cnt)
