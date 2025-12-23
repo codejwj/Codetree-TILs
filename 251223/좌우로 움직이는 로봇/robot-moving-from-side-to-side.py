@@ -34,10 +34,10 @@ for _ in range(M):
 total_time = max(time_A, time_B)
 
 for i in range(time_A, total_time + 1):
-    pos_A[i] = cur_A
+    pos_A[i] = pos_A[time_A - 1]
 
 for i in range(time_B, total_time + 1):
-    pos_B[i] = cur_B
+    pos_B[i] = pos_B[time_B - 1]
 
 ans = 0
 for i in range(1, total_time + 1):
