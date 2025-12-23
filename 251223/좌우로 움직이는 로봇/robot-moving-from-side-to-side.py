@@ -2,8 +2,8 @@ MAX_T = 1000000
 
 N, M = tuple(map(int, input().split()))
 
-pos_A = [0] * (MAX_T + 2)
-pos_B = [0] * (MAX_T + 2)
+pos_A = [0] * (MAX_T + 1)
+pos_B = [0] * (MAX_T + 1)
 
 cur_A, time_A = 0, 1
 for _ in range(N):
