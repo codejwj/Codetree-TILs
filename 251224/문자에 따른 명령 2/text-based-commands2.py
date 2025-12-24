@@ -8,9 +8,8 @@ for elem in D:
     if elem == 'L':
         dir_num = (dir_num - 1 + 4) % 4
     elif elem == 'R':
-        dir_num = (dir_num + 1) % 4
-    
-    if elem == 'F':
+        dir_num = (dir_num + 1) % 4   
+    elif elem == 'F':
         x += dx[dir_num]
         y += dy[dir_num]
 
