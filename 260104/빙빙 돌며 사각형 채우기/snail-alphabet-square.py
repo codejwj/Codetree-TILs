@@ -25,5 +25,5 @@ for i in range(2, N * M + 1):
 
 for i in range(N):
     for j in range(M):
-        print(chr((arr[i][j] % 26) + 64), end = ' ')
+        print(chr(((arr[i][j] - 1) % 26) + 65), end = ' ')
     print()
