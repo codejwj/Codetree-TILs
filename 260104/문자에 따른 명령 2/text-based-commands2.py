@@ -10,7 +10,7 @@ for elem in D:
     elif elem == 'R':
         dir_num = (dir_num + 1) % 4   
     elif elem == 'F':
-        x += dx[dir_num]
-        y += dy[dir_num]
+        x += dxs[dir_num]
+        y += dys[dir_num]
 
 print(x, y)
