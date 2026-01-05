@@ -21,9 +21,11 @@ def adjacent_cnt(x, y):
 
 for _ in range(M):
     r, c = tuple(map(int, input().split()))
-    arr[r - 1][c - 1] = 1
+    r -= 1
+    c -= 1
+    arr[r][c] = 1
 
-    if adjacent_cnt(r - 1, c - 1) == 3:
+    if adjacent_cnt(r, c) == 3:
         print(1)
     else:
         print(0)
