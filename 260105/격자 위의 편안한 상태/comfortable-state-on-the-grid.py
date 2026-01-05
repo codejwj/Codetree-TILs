@@ -1,6 +1,6 @@
 N, M = tuple(map(int, input().split()))
 arr = [
-    [0] *N
+    [0] * N
     for _ in range(N)
 ]
 
