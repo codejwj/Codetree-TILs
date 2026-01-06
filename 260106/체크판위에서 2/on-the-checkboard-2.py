@@ -1,6 +1,6 @@
-R, C = map(int, input().split())
+R, C = tuple(map(int, input().split()))
 grid = [
-    list(input().split()) 
+    input().split()
     for _ in range(R)
 ]
 
