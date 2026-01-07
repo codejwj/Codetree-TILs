@@ -1,7 +1,11 @@
+import sys
+
+INT_MIN = -sys.maxsize
+
 N = int(input())
 num = list(map(int, input().split()))
 
-max_sum = 0
+max_sum = INT_MIN
 
 for i in range(N):
     sum_val = 0
