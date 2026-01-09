@@ -1,3 +1,5 @@
+import sys
+
 arr = [
     list(map(int, input().split())) 
     for _ in range(19)
@@ -8,8 +10,6 @@ def in_range(x, y):
 
 dxs = [0, 1, 1, -1]
 dys = [1, 0, 1, 1]
-
-found = False
 
 for r in range(19):
     for c in range(19):
@@ -29,14 +29,6 @@ for r in range(19):
                 print(arr[r][c])
                 mid_r, mid_c = r + dx * 2 + 1, c + dy * 2 + 1
                 print(mid_r, mid_c)
-                found = True
-                break
-                
-        if found:
-            break
-    
-    if found:
-        break
+                sys.exit()
 
-if not found:
-    print(0)
+print(0)
