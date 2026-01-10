@@ -5,12 +5,12 @@ INT_MIN = -sys.maxsize
 N, K = tuple(map(int, input().split()))
 arr = list(map(int, input().split()))
 
-ans = INT_MIN
+max_sum = INT_MIN
 for i in range(N - K + 1):
     sum_val = 0
     for j in range(i, i + K):
         sum_val += arr[j]
     
-    ans = max(ans, sum_val)
+    max_sum = max(max_sum, sum_val)
 
-print(ans)
+print(max_sum)
