@@ -9,15 +9,15 @@ people.sort()
 
 max_size = 0
 for i in range(N):
-    cnt1 = 0
-    cnt2 = 0
+    cnt_G = 0
+    cnt_H = 0
     for j in range(i, N):
         if people[j][1] == 'G':
-            cnt1 += 1
+            cnt_G += 1
         else:
-            cnt2 += 1
+            cnt_H += 1
 
-        if cnt1 == 0 or cnt2 == 0 or cnt1 == cnt2:
+        if cnt_G == 0 or cnt_H == 0 or cnt_G == cnt_H:
             size = people[j][0] - people[i][0]       
             max_size = max(max_size, size)
 
