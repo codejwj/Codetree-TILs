@@ -2,6 +2,7 @@ import sys
 
 INT_MAX = sys.maxsize
 
+N = 6
 arr = list(map(int, input().split()))
 
 def diff(w, x, y, z):
@@ -11,11 +12,15 @@ def diff(w, x, y, z):
     return abs(max(sum1, sum2, sum3) - min(sum1, sum2, sum3))
 
 min_diff = INT_MAX
-for i in range(6):
-    for j in range(i + 1, 6):
-        remains = [idx for idx in range(6) if idx != i and idx != j]
-        for k in range(len(remains)):
-            for l in range(k + 1, len(remains)):
-                min_diff = min(min_diff, diff(i, j, remains[k], remains[l]))
+#첫 번째 팀원
+for i in range(N):
+    for j in range(i + 1, N):
+        #두 번째 팀원
+        for k in range(N):
+            for l in range(k + 1, N):
+                if k == i or k == j or l == i or l == j:
+                    continue
+
+                min_diff = min(min_diff, diff(i, j, k, l))
 
 print(min_diff)
