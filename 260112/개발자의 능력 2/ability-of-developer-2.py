@@ -13,8 +13,9 @@ def diff(w, x, y, z):
 min_diff = INT_MAX
 for i in range(6):
     for j in range(i + 1, 6):
-        for k in range(4):
-            for l in range(k + 1, 4):
-                min_diff = min(min_diff, diff(i, j, k, l))
+        remains = [idx for idx in range(6) if idx != i and idx != j]
+        for k in range(len(remains)):
+            for l in range(k + 1, len(remains)):
+                min_diff = min(min_diff, diff(i, j, remains[k], remains[l]))
 
 print(min_diff)
