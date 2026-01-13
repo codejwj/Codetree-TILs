@@ -1,40 +1,43 @@
 N = int(input())
-arr = []
-
-for _ in range(N):
-    num, cnt1, cnt2 = tuple(map(int, input().split()))
-    arr.append((num, cnt1, cnt2))
+arr = [
+    tuple(map(int, input().split()))
+    for _ in range(N)
+]
 
 cnt = 0
+#백의 자리 수 i, 십의 자리 수 j, 일의 자리 수  k
 for i in range(1, 10):
     for j in range(1, 10):
         for k in range(1, 10):
             if i == j or j == k or k == i:
                 continue
             
-            check = True
+            checked = True
 
-            for n, s, b in arr:
-                n1 = n // 100
-                n2 = (n // 10) % 10
-                n3 = n % 10
+            for num, num_cnt1, num_cnt2 in arr:
+                #n1:백의 자리 수, n2:십의 자리 수, n3:일의 자리 수
+                n1 = num // 100
+                n2 = (num // 10) % 10
+                n3 = num % 10
 
-                cnt_s = 0
-                cnt_b = 0
+                #1번 카운트, 2번 카운트
+                cnt1 = 0
+                cnt2 = 0
 
-                if i == n1: cnt_s += 1
-                if j == n2: cnt_s += 1
-                if k == n3: cnt_s += 1
+                if n1 == i: cnt1 += 1
+                if n2 == j: cnt1 += 1
+                if n3 == k: cnt1 += 1
                     
-                if i == n2 or i == n3: cnt_b += 1
-                if j == n1 or j == n3: cnt_b += 1
-                if k == n1 or k == n2: cnt_b += 1
+                if n1 == j or n1 == k: cnt2 += 1
+                if n2 == i or n2 == k: cnt2 += 1
+                if n3 == i or n3 == j: cnt2 += 1
 
-                if cnt_s != s or cnt_b != b:
-                    check = False
+                #카운트 수가 다르면 정답 아님
+                if cnt1 != num_cnt1 or cnt2 != num_cnt2:
+                    checked = False
                     break
             
-            if check:
+            if checked:
                 cnt += 1
 
 print(cnt)
