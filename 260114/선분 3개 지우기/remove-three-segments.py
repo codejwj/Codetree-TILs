@@ -18,13 +18,13 @@ def get_max_overlapped_cnt(x, y, z):
         
     return max(count)
 
-cnt = 0
+ans = 0
 for i in range(N):
     for j in range(i + 1, N):
         for k in range(j + 1, N):
             max_cnt = get_max_overlapped_cnt(i, j, k)
 
             if max_cnt <= 1:
-                cnt += 1
+                ans += 1
 
-print(cnt)
+print(ans)
