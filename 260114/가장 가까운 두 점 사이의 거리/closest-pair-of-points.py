@@ -10,18 +10,8 @@ points = [
 
 min_dist = INT_MAX
 for i in range(N):
-    x1, x2 = INT_MAX, 1
-    y1, y2 = INT_MAX, 1
-    for j, (x, y) in enumerate(points):
-        if j == i:
-            continue
-        
-        x1 = min(x1, x)
-        y1 = min(y1, y)
-        x2 = max(x2, x)
-        y2 = max(y2, y)
-    
-    dist = (x1 - x2) ** 2 + (y1 - y2) ** 2
-    min_dist = min(min_dist, dist)
+    for j in range(i + 1, N):
+        dist = (points[i][0] - points[j][0]) ** 2 + (points[i][1] - points[j][1]) ** 2
+        min_dist = min(min_dist, dist)
 
 print(min_dist)
