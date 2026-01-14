@@ -8,10 +8,14 @@ points = [
     for _ in range(N)
 ]
 
+def dist(x, y):
+    x1, y1 = points[x]
+    x2, y2 = points[y]
+    return (x1 - x2) ** 2 + (y1 - y2) ** 2
+
 min_dist = INT_MAX
 for i in range(N):
     for j in range(i + 1, N):
-        dist = (points[i][0] - points[j][0]) ** 2 + (points[i][1] - points[j][1]) ** 2
-        min_dist = min(min_dist, dist)
+        min_dist = min(min_dist, dist(i, j))
 
 print(min_dist)
