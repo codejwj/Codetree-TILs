@@ -5,18 +5,21 @@ arr = [
 ]
 
 cnt = 0
-for a in range(N):
-    for b in range(N):
+for a in range(1, N + 1):
+    for b in range(1, N + 1):
         if a == b:
             continue
         
-        win = True
+        is_always_better = True
         for i in range(K):
-            if arr[i][a] >= arr[i][b]:
-                win = False
+            rank_a = arr[i].index(a)
+            rank_b = arr[i].index(b)
+
+            if rank_a > rank_b:
+                is_always_better = False
                 break
 
-        if win:
+        if is_always_better:
             cnt += 1
     
 print(cnt)
