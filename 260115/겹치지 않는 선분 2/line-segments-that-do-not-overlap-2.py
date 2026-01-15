@@ -4,17 +4,18 @@ x = [
     for _ in range(N)
 ]
 
-overlapped = [0] * N
-
 cnt = 0
 for i in range(N):
-    for j in range(i + 1, N):
-        if (x[i][0] - x[j][0]) * (x[i][1] - x[j][1]) < 0:
-            overlapped[i] = 1
-            overlapped[j] = 1
+    overlap = False
+    for j in range(N):
+        if j == i:
+            continue
             
-for elem in overlapped:
-    if elem == 0:
+        if (x[i][0] - x[j][0]) * (x[i][1] - x[j][1]) < 0:
+            overlap = True
+            break
+    
+    if overlap == False:
         cnt += 1
 
 print(cnt)
