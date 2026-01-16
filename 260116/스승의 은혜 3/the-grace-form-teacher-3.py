@@ -6,23 +6,26 @@ gifts = [
 
 gifts.sort(key = lambda x: x[0] + x[1])
 
+P = [gift[0] for gift in gifts]
+S = [gift[1] for gift in gifts]
+
 ans = 0
 for i in range(N):
-    temp_B = B - ((gifts[i][0] // 2) + gifts[i][1])
+    temp_B = B - ((P[i] // 2) + S[i])
     if temp_B < 0:
         continue
 
-    studnet = 1
+    student = 1
     for j in range(N):
         if j == i:
             continue
 
-        if temp_B >= gifts[j][0] + gifts[j][1]:
-            temp_B -= (gifts[j][0] + gifts[j][1])
-            studnet += 1
+        if temp_B >= P[j] + S[j]:
+            temp_B -= (P[j] + S[j])
+            student += 1
         else:
             break
     
-    ans = max(ans, studnet)
+    ans = max(ans, student)
 
 print(ans)
