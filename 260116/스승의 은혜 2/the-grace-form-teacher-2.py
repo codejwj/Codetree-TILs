@@ -17,7 +17,7 @@ for i in range(N):
         if j == i:
             continue
 
-        if temp_B > P[j]:
+        if temp_B >= P[j]:
             temp_B -= P[j]
             cnt += 1
         else:
