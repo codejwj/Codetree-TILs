@@ -4,15 +4,11 @@ gifts = [
     for _ in range(N)
 ]
 
-P = [gift[0] for gift in gifts]
-S = [gift[1] for gift in gifts]
-
-P.sort()
-S.sort()
+gifts.sort(key = lambda x: x[0] + x[1])
 
 ans = 0
 for i in range(N):
-    temp_B = B - ((P[i] // 2) + S[i])
+    temp_B = B - ((gifts[i][0] // 2) + gifts[i][1])
     if temp_B < 0:
         continue
 
@@ -21,8 +17,8 @@ for i in range(N):
         if j == i:
             continue
 
-        if temp_B >= P[j] + S[j]:
-            temp_B -= (P[j] + S[j])
+        if temp_B >= gifts[j][0] + gifts[j][1]:
+            temp_B -= (gifts[j][0] + gifts[j][1])
             studnet += 1
         else:
             break
