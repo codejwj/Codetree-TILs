@@ -3,8 +3,6 @@ MAX_NUM = 100
 N = int(input())
 a = list(map(int, input().split()))
 
-a.sort()
-
 max_cnt = 0
 for K in range(1, MAX_NUM + 1):
     cnt = 0
