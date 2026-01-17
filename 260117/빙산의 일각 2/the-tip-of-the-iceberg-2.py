@@ -1,4 +1,4 @@
-MAX_NUM = 1000
+MAX_H = 1000
 
 N = int(input())
 H = [
@@ -7,7 +7,7 @@ H = [
 ]
 
 max_cnt = 0
-for i in range(1, MAX_NUM + 1):
+for i in range(1, MAX_H + 1):
     cnt = 0
     is_above_water = False
     for j in range(N):
