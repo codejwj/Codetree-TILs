@@ -10,7 +10,6 @@ max_cnt = 0
 for i in range(1, MAX_H + 1):
     cnt = 0
     is_above_water = False
-    
     for j in range(N):
         if H[j] > i:
             if not is_above_water:
