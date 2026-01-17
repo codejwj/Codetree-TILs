@@ -1,9 +1,12 @@
 X, Y = tuple(map(int, input().split()))
 
-max_sum = 0
-for i in range(X, Y + 1):
-    d1, d2 = tuple(map(int, list(str(i))))
-    sum_val = d1 + d2
-    max_sum = max(max_sum, sum_val)
+ans = 0
+for num in range(X, Y + 1):
+    str_num = str(num)
+    char_num = list(str_num)
+    int_num = list(map(int, char_num))
+    sum_val = sum(int_num)
 
-print(max_sum)
+    ans = max(ans, sum_val)
+    
+print(ans)
