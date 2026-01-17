@@ -5,7 +5,7 @@ def palindrome_num(n):
     num = list(str(n))
     for i in range(l // 2):
         if num[i] != num[l - 1 - i]:
-            break
+            return False
     
     return True
 
