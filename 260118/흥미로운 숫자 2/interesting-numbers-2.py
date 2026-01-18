@@ -2,7 +2,7 @@ X, Y = tuple(map(int, input().split()))
 
 def interesting(n):
     s = str(n)
-    #set을 이용해 중복 제
+    #set을 이용해 중복 제거
     digits = list(set(s))
 
     #숫자의 종류가 2종류가 아니면 흥미로운 숫자가 아님
