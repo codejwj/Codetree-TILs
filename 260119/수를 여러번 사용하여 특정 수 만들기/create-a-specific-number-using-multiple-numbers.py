@@ -1,5 +1,3 @@
-MAX_NUM = 1000
-
 A, B, C = tuple(map(int, input().split()))
 
 max_sum = 0
