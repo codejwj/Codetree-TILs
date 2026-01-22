@@ -1,26 +1,26 @@
 N = int(input())
 seat = list(input())
 
-def min_distance(x):
+def min_dist(x):
     arr = []
-    min_val = N
     for i in range(N):
         if x[i] == '1':
             arr.append(i)
-            
+    
+    min_val = N
     for j in range(len(arr) - 1):
         val = abs(arr[j] - arr[j + 1])
         min_val = min(min_val, val)
 
     return min_val
     
-max_dist = 0
+ans = 0
 for i in range(N):
     if seat[i] == '0':
         seat[i] = '1'
-        dist = min_distance(seat)
+        dist = min_dist(seat)
         seat[i] = '0'
         
-        max_dist = max(max_dist, dist)
+        ans = max(ans, dist)
 
-print(max_dist)
+print(ans)
