@@ -18,7 +18,7 @@ def is_possible(max_val):
     return True
 
 minimax = MAX_NUM
-for a in range(max(arr[0], arr[-1]), max(arr)):
+for a in range(max(arr[0], arr[-1]), max(arr) + 1):
     if is_possible(a):
         minimax = min(minimax, a)
     
