@@ -6,19 +6,20 @@ ranges = [
     for _ in range(N)
 ]
 
-min_val = MAX_NUN
-for x in range(1, MAX_NUN + 1):
-    temp_x = x
-    is_possible = True
-    for i in range(N):
-        temp_x *= 2
-        a = ranges[i][0]
-        b = ranges[i][1]
-        if temp_x < a or temp_x > b:
-            is_possible = False
-            break
-    
-    if is_possible:
-        min_val = min(min_val, x)
-    
-print(min_val)
+def satisfied(x):
+    for a, b in ranges:
+        #계속 2배씩 해주며
+        #a <= x <= b를 항상 만족하는지 확인
+        #아니라면, False를 반환
+        x *= 2
+        if x < a or x > b:
+            return False
+        
+    return True
+
+#1 ~ MAX_NUN 사이에 대해 탐색
+for i in range(1, MAX_NUN + 1):
+    #만족하는 i가 있다면, 해당 i가 최소이므로 출력
+    if satisfied(i):
+        print(i)
+        break
