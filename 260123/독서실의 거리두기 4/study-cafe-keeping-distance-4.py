@@ -14,8 +14,8 @@ ans = 0
 for i in range(N):
     for j in range(i + 1, N):
         if seat[i] == '0' and seat[j] == '0':
-            seat[i], seat[j] = '1', '1'
+            seat[i] = seat[j] = '1'
             ans = max(ans, min_dist())
-            seat[i], seat[j] = '0', '0'
+            seat[i] = seat[j] = '0'
 
 print(ans)
