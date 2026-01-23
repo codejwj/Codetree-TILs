@@ -1,9 +1,12 @@
+import sys
+
+INT_MAX = sys.maxsize
 MAX_NUM = 10000
 
 N, K = tuple(map(int, input().split()))
 arr = list(map(int, input().split()))
 
-min_cost = MAX_NUM 
+min_cost = INT_MAX
 for a in range(1, MAX_NUM + 1):
     cost = 0
     for elem in arr:
