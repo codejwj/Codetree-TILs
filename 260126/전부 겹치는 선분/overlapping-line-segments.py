@@ -1,24 +1,22 @@
+MAX_NUM = 100
+
 N = int(input())
 segments = [
     tuple(map(int, input().split())) 
     for _ in range(N)
 ]
 
-def intersecting(x1, x2):
-    for i in range(N):
-        for a, b in segments:
-            if x2 < a or b < x1:
-                return False
-            else:
-                return True
+max_start = 0
+min_end = MAX_NUM
 
 flag = True
-for i in range(N):
-    for x1, x2 in segments:
-        if intersecting(x1, x2):
-            flag = True
-        else:
-            flag = False
+for x1, x2 in segments:
+    max_start = max(max_start, x1)
+    min_end = min(min_end, x2)
+    
+    if max_start > min_end:
+        flag = False
+        break
 
 if flag:
     print("Yes")
