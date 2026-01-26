@@ -3,7 +3,7 @@ c, d = tuple(map(int, input().split()))
 
 def is_overlapping(a, b, c, d):
     if (b < c) or (d < a):
-        return 0
+        return (b - a) + (d - c) 
     else:
         if (d - a) > (b - c):
             return d - a
