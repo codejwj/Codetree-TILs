@@ -1,15 +1,10 @@
 a, b = tuple(map(int, input().split()))
 c, d = tuple(map(int, input().split()))
 
-def is_overlapping(a, b, c, d):
+def is_area(a, b, c, d):
     if (b < c) or (d < a):
-        return (b - a) + (d - c) 
+        return (b - a) + (d - c)
     else:
-        if (d - a) > (b - c):
-            return d - a
-        elif c <= b and a <= d:
-            return b - c
-        elif c <= a and b <= d:
-            return d - c
+        return max(b, d) - min(a, c)
 
-print(is_overlapping(a, b, c, d))
+print(is_area(a, b, c, d))
