@@ -3,7 +3,7 @@ pos = list(map(int, input().split()))
 pos.sort()
 
 #case 1. 3개의 숫자가 전부 연속일 경우
-#이 경우에는 이동할 필요가 없으므로 최소 이동 횟수 0
+#이 경우에는 이동할 필요가 없으므로 최소 이동 횟수는 0
 if pos[1] - pos[0] == 1 and pos[2] - pos[1] == 1:
     print(0)
 #case 2. 2개의 숫자의 차이가 정확히 2가 나는 경우
