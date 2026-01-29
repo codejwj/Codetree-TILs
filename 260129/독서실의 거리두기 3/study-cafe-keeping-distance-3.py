@@ -1,3 +1,7 @@
+import sys
+
+INT_MAX = sys.maxsize
+
 N = int(input())
 seats = list(input())
 
@@ -20,5 +24,8 @@ if seats[mid] == '0':
 
 arr.sort()
 
-ans = max_dist // 2
+ans = INT_MAX
+for i in range(len(arr) - 1):
+    ans = min(ans, arr[i + 1] - arr[i])
+
 print(ans)
