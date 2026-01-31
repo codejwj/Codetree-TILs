@@ -11,6 +11,8 @@ for i in range(N):
     if seats[i] == '1':
         arr.append(i)
 
+max_dist = 0
+pos = 0
 left_gap = arr[0]
 right_gap = (N - 1) - arr[-1]
 
@@ -23,7 +25,7 @@ else:
 
 for i in range(len(arr) - 1):
     dist = (arr[i + 1] - arr[i]) // 2 
-    if max_dist < dist:
+    if dist > max_dist:
         max_dist = dist
         pos = (arr[i + 1] + arr[i]) // 2
     
