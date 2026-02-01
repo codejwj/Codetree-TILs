@@ -7,7 +7,7 @@ for _ in range(N):
     arr.append((c, s))
 
 cnt = 0
-leader = 0
+leader = 3
 score_A = 0
 score_B = 0
 for c, s in arr:
