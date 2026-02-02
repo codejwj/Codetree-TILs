@@ -17,7 +17,7 @@ rL, cL = L_pos
 rR, cR = R_pos
 rB, cB = B_pos
 
-#맨해튼 거리 계산 (기본 거리 = 행 차이 + 열 차이 - 1 )
+#맨해튼 거리 계산 (기본 거리 = 행 차이 + 열 차이 - 1)
 dist = abs(rL - rB) + abs(cL - cB) - 1
 
 #세 좌표의 행이 모두 같을 경우 
