@@ -1,12 +1,12 @@
 n = int(input())
 a = list(map(int, input().split()))
 
-pos = list(set(a))
-pos.sort()
+arr = list(set(a))
+arr.sort()
 
-if len(pos) < 2:
+if len(arr) < 2:
     print(-1)
-elif a.count(pos[1]) >= 2:
+elif a.count(arr[1]) >= 2:
     print(-1)
 else:
-    print(a.index(pos[1]) + 1)
+    print(a.index(arr[1]) + 1)
