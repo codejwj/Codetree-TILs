@@ -11,5 +11,5 @@ arr.sort()
 #case 1에 해당
 num1 = arr[-1] * arr[-2] * arr[-3]
 #case 3에 해당
-num2 = arr[0] * arr[1] * arr[-1]
+num2 = arr[-1] * arr[0] * arr[1]
 print(max(num1, num2))
